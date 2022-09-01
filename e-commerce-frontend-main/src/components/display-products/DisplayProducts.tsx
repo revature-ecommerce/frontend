@@ -1,3 +1,4 @@
+import { TextField } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import Product from '../../models/Product';
@@ -86,9 +87,9 @@ export const DisplayProducts = () => {
     <React.Fragment>
         <Navbar/>
         <Container>
-		      <input 
-			      type="text"
-            placeholder="Search by Name"
+		      <TextField 
+			      variant="outlined"
+            label="Search by Name"
             onChange={(e)=>setQuery(e.target.value)} />
         </Container>
         <Container>
