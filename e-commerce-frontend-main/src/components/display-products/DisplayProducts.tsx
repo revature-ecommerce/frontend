@@ -78,11 +78,27 @@ export const DisplayProducts = () => {
   // ]
   
   if(query.length>0){
-    fproducts=products.filter((product)=>product.name.toLowerCase().includes(query.toLowerCase()))
+    fproducts=products.filter((product)=>product.name.toLowerCase().includes(query.toLowerCase().trim()))
   } else {
     fproducts=products
   }
-
+  if(fproducts.length<1 && query.length>0){
+    return (
+      <React.Fragment>
+          <Navbar/>
+          <Container>
+            <TextField 
+              variant="outlined"
+              label="Search by Name"
+              onChange={(e)=>setQuery(e.target.value)} />
+          </Container>
+          <Container>
+            <p>No Products Match Your Search</p>
+          </Container>
+      </React.Fragment>
+      
+    );
+  }
   return (
     <React.Fragment>
         <Navbar/>
