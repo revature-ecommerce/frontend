@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { CartContext } from "../../context/cart.context";
 import Navbar from "../navbar/Narbar";
+import DeleteIcon from '@mui/icons-material/Delete';
+import { red } from "@material-ui/core/colors";
 
 const Container = styled.div``;
 
@@ -78,6 +80,12 @@ const PriceDetail = styled.div`
   justify-content: center;
 `;
 
+const RemoveIconArea = styled.div`
+display: flex;
+align-items: center;
+margin-right: 50px;
+`;
+
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
@@ -133,6 +141,17 @@ const Button = styled.button`
 export const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
 
+  const removeItemFromCart = (id: number) => {
+    const newCart = [...cart]
+    const index = newCart.findIndex((searchProduct) => {
+      return searchProduct.id === id
+    })
+
+    newCart.splice(index, 1);
+  
+    setCart(newCart)
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -167,6 +186,9 @@ export const Cart = () => {
                       </ProductAmountContainer>
                       <ProductPrice>$ {product.price}</ProductPrice>
                     </PriceDetail>
+                    <RemoveIconArea>
+                      <DeleteIcon sx={{ color: red[500] }} fontSize="large" onClick={() => {removeItemFromCart(product.id)}}/>
+                    </RemoveIconArea>
                   </Product>
                   <Hr/>
                 </>
