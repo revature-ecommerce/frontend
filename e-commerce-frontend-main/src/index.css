@@ -11,16 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  text-align: center;
-  backgrou-color: var(--bg-color);
-  color: var(--text-color);
-}
-[data-theme="dark"]{
-  --bg-color: '#363537',
-  --text-color: '#FAFAFA',
-}
-
