@@ -1,16 +1,7 @@
-FROM node:14-alpine
-
+FROM node:16.17.0-alpine
 WORKDIR /app
-
-COPY package.json ./
-
-# COPY yarn.lock ./
-
-# RUN yarn install --frozen-lockfile
-RUN npm install
-
+COPY package.json .
+RUN npm install --legacy-peer-deps
 COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+EXPOSE 3000 
+CMD ["npm","start"]
