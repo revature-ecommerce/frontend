@@ -1,7 +1,16 @@
-FROM node:16.17.0
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install --legacy-peer-deps
-COPY . ./
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+
+# COPY yarn.lock ./
+
+# RUN yarn install --frozen-lockfile
+RUN npm install
+
+COPY . .
+
 EXPOSE 3000
-CMD ["npm","start"]
+
+CMD ["npm", "start"]
