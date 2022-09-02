@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Product from '../../models/Product';
 import { apiGetAllProducts } from '../../remote/e-commerce-api/productService';
 import Navbar from '../navbar/Narbar';
-import { ProductCard } from "./ProductCard";
+import { SearchName } from './SearchProducts';
 
 const Container = styled.div`
     padding: 20px;
@@ -17,7 +17,6 @@ export const DisplayProducts = () => {
 
   const [products, setProducts] = useState<Product[]>([])
   const [query, setQuery]=useState("")
-  var fproducts=[]
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,28 +76,6 @@ export const DisplayProducts = () => {
   //     },
   // ]
   
-  if(query.length>0){
-    fproducts=products.filter((product)=>product.name.toLowerCase().includes(query.toLowerCase().trim()))
-  } else {
-    fproducts=products
-  }
-  if(fproducts.length<1 && query.length>0){
-    return (
-      <React.Fragment>
-          <Navbar/>
-          <Container>
-            <TextField 
-              variant="outlined"
-              label="Search by Name"
-              onChange={(e)=>setQuery(e.target.value)} />
-          </Container>
-          <Container>
-            <p>No Products Match Your Search</p>
-          </Container>
-      </React.Fragment>
-      
-    );
-  }
   return (
     <React.Fragment>
         <Navbar/>
@@ -109,9 +86,7 @@ export const DisplayProducts = () => {
             onChange={(e)=>setQuery(e.target.value)} />
         </Container>
         <Container>
-        {fproducts.map((item) => (
-            <ProductCard product={item} key={item.id} />
-        ))}
+          <SearchName products={products} query={query}/>
         </Container>
     </React.Fragment>
     
