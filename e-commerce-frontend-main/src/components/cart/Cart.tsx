@@ -5,6 +5,8 @@ import { CartContext } from "../../context/cart.context";
 import Navbar from "../navbar/Narbar";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { red } from "@material-ui/core/colors";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const Container = styled.div``;
 
@@ -152,6 +154,25 @@ export const Cart = () => {
     setCart(newCart)
   }
 
+  const incrementItem = (id: number) => {
+    const newCart = [...cart]
+    const index = newCart.findIndex((searchProduct) => {
+      return searchProduct.id === id
+    })
+    newCart[index].quantity += 1;
+    setCart(newCart)
+  }
+
+  const decrementItem = (id: number) => {
+    const newCart = [...cart]
+    const index = newCart.findIndex((searchProduct) => {
+      return searchProduct.id === id
+    })
+    if(newCart[index].quantity>1)
+      newCart[index].quantity -= 1;
+    setCart(newCart)
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -182,7 +203,9 @@ export const Cart = () => {
                     </ProductDetail>
                     <PriceDetail>
                       <ProductAmountContainer>
+                        <RemoveCircleOutlineIcon sx={{ mr: 5 }} onClick={() => {decrementItem(product.id)}}/>
                         <ProductAmount> {product.quantity} </ProductAmount>
+                        <AddCircleOutlineIcon sx={{ ml: 5 }} onClick={() => {incrementItem(product.id)}}/>
                       </ProductAmountContainer>
                       <ProductPrice>$ {product.price}</ProductPrice>
                     </PriceDetail>
