@@ -81,7 +81,9 @@ export const DisplayProducts = () => {
         <Navbar/>
         <Container>
 		      <TextField 
-			      variant="outlined"
+			      name="searchbar"
+            id="searchbar"
+            variant="outlined"
             label="Search by Name"
             onChange={(e)=>setQuery(e.target.value)} />
         </Container>
