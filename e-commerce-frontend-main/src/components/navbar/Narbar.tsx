@@ -3,6 +3,7 @@ import { ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import DarkMode from "../../DarkMode";
 
 const Container = styled.div`
   height: 60px;
@@ -42,6 +43,7 @@ const Navbar = () => {
 
   return (
     <Container>
+      <DarkMode/>
       <Wrapper>
         <Left>
         <Logo onClick={() => {navigate('/')}}>Revature Swag Shop</Logo>
