@@ -25,6 +25,16 @@ const Left = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
 `;
+
+const url='https://cdn.discordapp.com/attachments/1014202573328236664/1016779501922947205/unnamed.png';
+const LogoImage = styled.img`
+  width:10;
+  height5;
+`;
+LogoImage.defaultProps = {
+  src: url
+};
+
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -43,10 +53,10 @@ const Navbar = () => {
 
   return (
     <Container>
-      <DarkMode/>
       <Wrapper>
         <Left>
-        <Logo onClick={() => {navigate('/')}}>Revature Swag Shop</Logo>
+        {/* <Logo onClick={() => {navigate('/')}}>Revature Swag Shop</Logo> */}
+        <LogoImage onClick={() => {navigate('/')}}/>
         </Left>
         <Right>
           <MenuItem onClick={() => {navigate('/register')}}>REGISTER</MenuItem>
@@ -55,6 +65,9 @@ const Navbar = () => {
             <Badge color="primary">
               <ShoppingCartOutlined />
             </Badge>
+          </MenuItem>
+          <MenuItem>        
+            <DarkMode/>
           </MenuItem>
         </Right>
       </Wrapper>
