@@ -54,6 +54,7 @@ const Navbar = () => {
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
+          <MenuItem onClick={() => {navigate('/profile')}}>PROFILE</MenuItem>
         </Right>
       </Wrapper>
     </Container>
