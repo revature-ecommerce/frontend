@@ -22,11 +22,33 @@ test("toggles dark mode", () => {
   expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
 });
 
+<<<<<<< Updated upstream
 // test("Check Logo",()=>{
 //   render(<App/>);
 //   const linkElement = screen.getByText(/Revature/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
+=======
+test("checks toggle button", () => {
+  render(<DarkMode/>);
+  const inputElement = screen.getByRole("checkbox") as HTMLInputElement;
+  expect(fireEvent.click(inputElement));
+});
+
+/**
+ * :root {
+  --font-color: rgb(253,181,21);
+  --background-color: rgb(185,185,186);
+  --link-color: rgb(115,165,194);
+}
+  
+[data-theme="dark"] {
+  --font-color: rgb(255, 255, 255);
+  --background-color: rgb(72, 76, 86);
+  --link-color: rgb(242,105,38);
+}
+ */
+>>>>>>> Stashed changes
 test("Check Logo",()=>{
   render(
   <BrowserRouter>
