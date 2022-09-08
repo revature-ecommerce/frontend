@@ -90,7 +90,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
       setCart(newCart)
     }
-
+    const testproduct=new Product(1,'testname',5,'testdesc',9,'noimg');
     return (
       <Container>
         <Circle />
@@ -100,7 +100,11 @@ import { useNavigate, useParams } from 'react-router-dom';
             <ShoppingCartOutlined onClick={() => {addItemToCart({...props.product, quantity: 1})}} />
           </Icon>
           <Icon>
-          <SearchOutlined onClick={() => {navigate('/products/'+props.product.id)}} />
+          <SearchOutlined onClick={() => {
+            // navigate('/product',{state:{...testproduct},replace: true})
+            navigate('/product',{state:{...props.product},replace: true})
+          }
+          } />
           </Icon>
         </Info>
       </Container>
