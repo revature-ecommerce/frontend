@@ -1,4 +1,5 @@
 .table {
+    height: 100px;
     width: 800px;
     border-collapse: collapse;
     text-align: center;
@@ -8,9 +9,17 @@
 }
 
 .thead {
+    height: 130px;
     position: sticky;
     z-index: 100;
     text-align: center;
+}
+
+.theader {
+    padding-top: 120px;
+    text-align: left;
+
+
 }
 
 .trHead {

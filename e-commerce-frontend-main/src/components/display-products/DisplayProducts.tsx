@@ -1,9 +1,10 @@
+import { TextField } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import Product from '../../models/Product';
 import { apiGetAllProducts } from '../../remote/e-commerce-api/productService';
 import Navbar from '../navbar/Narbar';
-import { ProductCard } from "./ProductCard";
+import { SearchName } from './SearchProducts';
 
 const Container = styled.div`
     padding: 20px;
@@ -15,6 +16,7 @@ const Container = styled.div`
 export const DisplayProducts = () => {
 
   const [products, setProducts] = useState<Product[]>([])
+  const [query, setQuery]=useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,14 +75,20 @@ export const DisplayProducts = () => {
   //       quantity: 10,
   //     },
   // ]
-
+  
   return (
     <React.Fragment>
         <Navbar/>
         <Container>
-        {products.map((item) => (
-            <ProductCard product={item} key={item.id} />
-        ))}
+		      <TextField 
+			      name="searchbar"
+            id="searchbar"
+            variant="outlined"
+            label="Search by Name"
+            onChange={(e)=>setQuery(e.target.value)} />
+        </Container>
+        <Container>
+          <SearchName products={products} query={query}/>
         </Container>
     </React.Fragment>
     

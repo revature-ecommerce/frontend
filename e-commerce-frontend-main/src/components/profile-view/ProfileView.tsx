@@ -51,7 +51,7 @@ export function ViewUser() {
               <div>
                 <p></p>
                   <div>
-                    <h3>User Profile</h3>
+                    <h3 className="theader">User Profile</h3>
                       <table className="table">
                           <thead className="thead">
                               <tr className="trHead">
