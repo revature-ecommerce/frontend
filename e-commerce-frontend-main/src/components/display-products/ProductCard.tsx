@@ -5,8 +5,10 @@ import {
 import { useContext } from "react";
   import styled from "styled-components";
 import { CartContext } from "../../context/cart.context";
-import Product from "../../models/Product";
-  
+import Product from "../../models/Product"; 
+import { useNavigate, useParams } from 'react-router-dom';
+
+
   const Info = styled.div`
     opacity: 0;
     width: 100%;
@@ -73,6 +75,7 @@ import Product from "../../models/Product";
   }
 
   export const ProductCard = (props: productProps) => {
+    let navigate = useNavigate(); 
     const { cart, setCart } = useContext(CartContext);
 
     const addItemToCart = (product: Product) => {
@@ -97,7 +100,7 @@ import Product from "../../models/Product";
             <ShoppingCartOutlined onClick={() => {addItemToCart({...props.product, quantity: 1})}} />
           </Icon>
           <Icon>
-            <SearchOutlined />
+          <SearchOutlined onClick={() => {navigate('/products/'+props.product.id)}} />
           </Icon>
         </Info>
       </Container>
