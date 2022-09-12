@@ -12,7 +12,8 @@ const testArray = [
           "price": 20,
           "description": "A nice pair of headphones",
           "image": "https://i.insider.com/54eb437f6bb3f7697f85da71?width=1000&format=jpeg&auto=webp",
-          "name": "Headphones"
+          "name": "Headphones",
+          "reviewavg":4
         },
         {
           "id": 2,
@@ -20,7 +21,8 @@ const testArray = [
           "price": 45,
           "description": "A nice TeeShirt",
           "image": "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
-          "name": "TeeShirt"
+          "name": "TeeShirt",
+          "reviewavg":4
         },
         {
           "id": 3,
@@ -28,7 +30,8 @@ const testArray = [
           "price": 2.5,
           "description": "A reusable shopping bag",
           "image": "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
-          "name": "Shopping Bag"
+          "name": "Shopping Bag",
+          "reviewavg":4
         },
         {
           "id": 4,
@@ -36,7 +39,8 @@ const testArray = [
           "price": 10,
           "description": "A fancy cap for a fancy person",
           "image": "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-          "name": "Baseball Cap"
+          "name": "Baseball Cap",
+          "reviewavg":4
         },
         {
           "id": 5,
@@ -44,7 +48,8 @@ const testArray = [
           "price": 80,
           "description": "A nice coat",
           "image": "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
-          "name": "Coat"
+          "name": "Coat",
+          "reviewavg":4
         }
       ];
 const headphoneArray = [{
@@ -53,7 +58,8 @@ const headphoneArray = [{
     "price": 20,
     "description": "A nice pair of headphones",
     "image": "https://i.insider.com/54eb437f6bb3f7697f85da71?width=1000&format=jpeg&auto=webp",
-    "name": "Headphones"
+    "name": "Headphones",
+    "reviewavg":4
   },];
 const teeshirtArray = [{
   "id": 2,
@@ -61,7 +67,8 @@ const teeshirtArray = [{
   "price": 45,
   "description": "A nice TeeShirt",
   "image": "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
-  "name": "TeeShirt"
+  "name": "TeeShirt",
+  "reviewavg":4
 }];
 const coatArray = [{
   "id": 5,
@@ -69,7 +76,8 @@ const coatArray = [{
   "price": 80,
   "description": "A nice coat",
   "image": "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
-  "name": "Coat"
+  "name": "Coat",
+  "reviewavg":4
 }]
 
 test('blank query input', ()=>{
