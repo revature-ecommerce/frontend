@@ -5,9 +5,9 @@
 }
   
 [data-theme="dark"] {
-  --font-color: rgb(255, 255, 255);
+  --font-color: rgb(253, 181, 21);
   --background-color: rgb(72, 76, 86);
-  --link-color: rgb(242,105,38);
+  --link-color: rgb(115,165,194);
 }
   
 body {
