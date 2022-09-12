@@ -7,6 +7,7 @@ import DarkMode from "../darkmode/DarkMode";
 
 const Container = styled.div`
   height: 60px;
+  padding-bottom: 110px;
 `;
 
 const Wrapper = styled.div`
@@ -29,7 +30,7 @@ const Logo = styled.h1`
 const url='https://cdn.discordapp.com/attachments/1014202573328236664/1016779501922947205/unnamed.png';
 const LogoImage = styled.img`
   width:10;
-  height5;
+  height:5;
 `;
 LogoImage.defaultProps = {
   src: url
