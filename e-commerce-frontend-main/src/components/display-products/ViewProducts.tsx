@@ -4,6 +4,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './ViewProducts.css';
 import { ViewCart } from './ViewCart';
+import ProductReviews from '../ProductReviews/ProductReviews';
 
 
 export type ProductDetailsProps = {} & React.HTMLAttributes<HTMLDivElement>
@@ -13,6 +14,8 @@ export const ViewProducts = () => {
     const product = state as any as Product;
     console.log(state);
 
+    var truncated = Math.floor(product.reviewavg * 10) / 10; 
+    var truncated2 = product.price.toFixed(2); 
 
     return (
     <React.Fragment>
@@ -31,14 +34,25 @@ export const ViewProducts = () => {
                 <br/>
             </p>
             <p className='view-price'>
-                <p>${product.price}.00</p>
+                <p>${truncated2}</p>
+                <br/>
+            </p>
+            <p className='view-rating'>
+                <p>Review Score:</p>
+                <p>{truncated}/5</p>
                 <br/>
             </p>
             <p className='view-cart'>
             <ViewCart product={product} key={product.id} />
             </p>
+           
             </div>
+
         </div>
+        <div className= 'previews'>
+          <ProductReviews product={product} />
+        </div>
+        
     </React.Fragment>
     );
 }

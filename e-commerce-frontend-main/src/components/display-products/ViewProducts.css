@@ -58,6 +58,12 @@ div> p{
     
 }
 
+.view-rating{
+    flex: 2;
+    font-size: 35px;
+    
+}
+
 .view-cart{
     flex:2;
     text-align: right;

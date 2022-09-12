@@ -90,7 +90,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
       setCart(newCart)
     }
-    const testproduct=new Product(1,'testname',5,'testdesc',9,'noimg');
+    const testproduct=new Product(1,'testname',5,4,'testdesc',9,'noimg');
     return (
       <Container>
         <Circle />
