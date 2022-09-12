@@ -15,7 +15,7 @@ div> p{
 }
 
 .view .view-img {
-    border: 15px solid #f9ad07;
+    border: 10px solid #f9ad07;
     justify-content: left;
     object-fit: scale-down;
     max-width: 600px;
