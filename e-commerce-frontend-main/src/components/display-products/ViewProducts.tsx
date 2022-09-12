@@ -3,7 +3,7 @@ import Product from '../../models/Product';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './ViewProducts.css';
-import { ViewCart } from './ViewCart'
+import { ViewCart } from './ViewCart';
 
 
 export type ProductDetailsProps = {} & React.HTMLAttributes<HTMLDivElement>
@@ -18,7 +18,7 @@ export const ViewProducts = () => {
     <React.Fragment>
         <Navbar/>
         <div className='view'>
-            <p className='view-image'>
+            <p className='view-img'>
                 <img src={product.image}/>
             </p>
             <div className='view-flexboxright'>
