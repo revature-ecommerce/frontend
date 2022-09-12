@@ -10,38 +10,38 @@ The customer base for Revature Swag Shop includes all persons with verifiable ac
 
 ## Core functionalities: 
 
-- **Authenticating login page for new and existing users  
+- Authenticating login page for new and existing users  
 
-- **Homepage displaying Swag Shop products with easy access to website’s cart and checkout features 
+- Homepage displaying Swag Shop products with easy access to website’s cart and checkout features 
 
-- **User-friendly shopping cart that allows verified users to view the name and number of products which they have selected 
+- User-friendly shopping cart that allows verified users to view the name and number of products which they have selected 
 
-- **Detailed checkout functionality that displays current shopping cart items and total pricing 
+- Detailed checkout functionality that displays current shopping cart items and total pricing 
 
-- **Ability to search for products  
+- Ability to search for products  
 
-- **Dark mode feature 
+- Dark mode feature 
 
-- **Option to remove items from shopping cart 
+- Option to remove items from shopping cart 
 
-- **Ability to access a detailed view of product features 
+- Ability to access a detailed view of product features 
 
-- **A product review feature that includes a five-star rating and optional comment section 
+- A product review feature that includes a five-star rating and optional comment section 
 
-- **Profile page containing user’s unique account information 
+- Profile page containing user’s unique account information 
 
 ## Additional functionalities: 
 
-- **Ability to select the desired quantity of items before adding to the shopping cart 
+- Ability to select the desired quantity of items before adding to the shopping cart 
 
-- **Visible bundle deals that entice the user to buy multiple products  
+- Visible bundle deals that entice the user to buy multiple products  
 
-- **Access to the shop’s featured products based off product popularity and ratings 
-
- 
+- Access to the shop’s featured products based off product popularity and ratings 
 
  
 
  
 
-Team: Andrew Frumkin, Jesus Torres, Katelyn Doan, Tommy Hai, Jonathan Flemming, Tabitha Townes, Ben Brassard, Muhammad Ali, Ryan Griffin, and Mary Norris 
+ 
+
+> Team: Andrew Frumkin, Jesus Torres, Katelyn Doan, Tommy Hai, Jonathan Flemming, Tabitha Townes, Ben Brassard, Muhammad Ali, Ryan Griffin, and Mary Norris 
