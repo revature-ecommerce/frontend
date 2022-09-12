@@ -5,6 +5,7 @@
     text-align: center;
     border-radius: var(--border-radius);
     overflow: hidden;
+    border: 3px solid orange;
     
 }
 
@@ -32,7 +33,8 @@
     color: var(--text);
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 20px;
+    border: 1px solid orange;
     
 }
 
@@ -43,8 +45,8 @@
 
 .td {
     padding: var(--sm-spacing);
-    border: 1px solid var(--bg2);
-    font-size: 14px;
+    border: 1px solid orange;
+    font-size: 16px;
 }
 
 /* border: "2px solid"; */
