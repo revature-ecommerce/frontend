@@ -1,0 +1,49 @@
+.view{
+    font-family: sans-serif;
+    display: flex;
+    margin-right: 50px;
+}
+
+.view-flexboxright{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+div> p{
+    flex-flow: row;
+}
+
+.view-image{
+    flex: 1;
+
+}
+
+.view-name{
+    flex: 2;
+    font-size: 100px;
+    font-weight: bold;
+    
+
+}
+
+.view-text{
+    flex: 2;
+    font-size: 75px;
+    margin-right: 700px;
+}
+
+.view-price{
+    flex: 2;
+    font-size: 40px;
+    
+}
+
+.view-cart{
+    flex:2;
+    text-align: right;
+    margin-right: 700px;
+    font-size: 75px;
+    cursor: pointer;
+    transform: scale(1.8);
+}
+
