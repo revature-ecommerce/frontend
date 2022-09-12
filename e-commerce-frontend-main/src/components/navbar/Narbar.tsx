@@ -7,7 +7,6 @@ import DarkMode from "../darkmode/DarkMode";
 
 const Container = styled.div`
   height: 60px;
-  padding-bottom: 110px;
 `;
 
 const Wrapper = styled.div`

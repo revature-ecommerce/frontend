@@ -16,7 +16,18 @@ const Container = styled.div`
     justify-content: space-between;
     margin: 0 auto;
 `;
-
+const SearchBar = styled.input`
+    width: 20%;
+    font-size: 20pt;
+`
+const SearchBarSpace= styled.form`
+    padding: 40px;
+    margin-left: 40%;
+`
+const SearchBarLabel = styled.label`
+    padding: 10px;
+    font-size: 20pt;
+`
 export const DisplayProducts = () => {
 
   const [ products, setProducts] = useState<Product[]>([])
@@ -85,14 +96,13 @@ export const DisplayProducts = () => {
   return (
     <React.Fragment>
         <Navbar/>
-        <Container>
-		      <TextField 
-			      name="searchbar"
-            id="searchbar"
-            variant="outlined"
-            label="Search by Name"
+        <SearchBarSpace>
+          <SearchBarLabel>Search</SearchBarLabel>
+          <SearchBar
+            type="search"
+            placeholder='Product Name'
             onChange={(e)=>setQuery(e.target.value)} />
-        </Container>
+        </SearchBarSpace>
         <Container>
           <SearchName products={products} query={query}/>
         </Container>
