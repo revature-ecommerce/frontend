@@ -15,8 +15,7 @@
 	Node.js is important for asynchronous programming be sure to install the 16.17.0-alpine version of node. 
 	This will allow for the command 'npm start' within VScode's console in the /e-commerce-frontend-main/ folder.
 ### **Docker**:
-	Docker allows the capture of an image and maintaining the development environment. T
-	his helps solves the issue of different computers having different versions of programs such as node.js, react etc. 
-	In order to correctly utilize docker with our application,
-	please refer to the docker-compose.yml in our /e-commerce-frontend-main/. 
+	Docker allows the capture of an image and maintaining the development environment. 
+	This helps solves the issue of different computers having different versions of programs such as node.js, react etc. 
+	In order to correctly utilize docker with our application, please refer to the docker-compose.yml in our /e-commerce-frontend-main/. 
 	Along with the yaml file, there is a Dockerfile that sets up the container for our application.
