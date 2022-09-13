@@ -14,74 +14,57 @@ export function ProductReviews(props: productProps) {
 
   let id:number = props.product.id;
   const apiurl='http://54.152.208.161:8080/api/review/new';
-
-  const [reviews, setReviews]=useState<Reviews[]>([])
+  const[users, setUsers] = useState({email : "", firstName : "", lastName : ""});
+  const [reviews, setReviews]=useState<Reviews[]>([]);
+  const[score, setScore] = useState("");
+  const[text, setText]= useState("");
+  
   useEffect (()=>{
       loadReviews();
-     
+      loadUser();
   }, []);
 
   const loadReviews=async()=>{
-    const result =await axios.get("http://54.152.208.161:8080/api/review/name/"+id)
-    console.log(result.data);
+    const result =await axios.get("http://54.152.208.161:8080/api/review/name/"+id);
     setReviews(result.data);
  };
 
- const[users, setUsers] = useState({email : "", firstName : "", lastName : ""})
 
- useEffect(() => {
-  loadUser();
-}, []);
+  const loadUser = async () => {
 
- const loadUser = async () => {
+    var axios = require('axios');
 
-  var axios = require('axios');
-
-  var config = {
-      method: 'post',
-      url: 'http://54.152.208.161:8080/auth/userprofile',   
-      withCredentials:true
+    var config = {
+        method: 'post',
+        url: 'http://54.152.208.161:8080/auth/userprofile',   
+        withCredentials:true
     };
-    
+      
     axios(config)
     .then(function (response: any) {
         setUsers(response.data);
-        console.log(response.data);
-        setNewreview({...newreview,user:users.firstName});
     })
     .catch(function (error: any) {
       console.log(error);
     });    
 };
 
-const [newreview, setNewreview]=useState({
-  score:0,
-  text:'',
-  user:users.firstName,
-  product:id
-});
-
-console.log(newreview);
-const{score, text, user, product}=newreview
-const onInputChange=(e:any)=>{
-  setNewreview({...newreview,[e.target.name]:e.target.value});
-};
 
 
 const onSubmit=async(e:any)=>{ 
   e.preventDefault()
-  console.log(newreview);
   createPost();
 };
 
 const createPost=()=>{
   var axios = require('axios');
-  var data = newreview;
+  var data = {score:score,text:text,user:users.firstName,product:id};
+  console.log(data);
   var config = {
           method: 'post',
           url: apiurl,
           headers: { 
-                  'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
           },
           withCredentials:true,
           data : data
@@ -89,16 +72,12 @@ const createPost=()=>{
 
   axios(config)
   .then(function (response:any) {
-          console.log(JSON.stringify(response.data));
+    console.log(JSON.stringify(response.data));
   })
   .catch(function (error:any) {
-          console.log(error);
+    console.log(error);
   });
 }
-
-const handleChange=(e:any)=>{
-  setNewreview({...newreview,score:e.target.value});
-};
 
   return (
     <div className="main_container">
@@ -111,7 +90,7 @@ const handleChange=(e:any)=>{
                         <label htmlFor='score' className='form-label'>
                             Rate this Product:
                         </label>
-                        <select className='form-select' value={score} onChange={(e)=> handleChange(e)}>
+                        <select className='form-select' onChange={(e)=> setScore(e.target.value)}>
                           <option value={1}>1</option>
                           <option value={2}>2</option>
                           <option value={3}>3</option>
@@ -129,8 +108,7 @@ const handleChange=(e:any)=>{
                             className="form-control2"
                             placeholder='Comments'
                             name="text"
-                            value={text}
-                            onChange={(e)=> onInputChange(e)}
+                            onChange={(e)=> setText(e.target.value)}
                         />
                         
                     </div>
