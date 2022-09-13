@@ -7,7 +7,7 @@ const eCommerceClient = axios.create({
   baseURL: 'http://54.152.208.161:8080',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'http://54.152.208.161:3000',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
   },
 });
 
