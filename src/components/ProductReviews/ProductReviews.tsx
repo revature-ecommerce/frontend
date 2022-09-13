@@ -13,7 +13,7 @@ interface productProps {
 export function ProductReviews(props: productProps) {
 
   let id:number = props.product.id;
-  const apiurl='http://localhost:8080/api/review/new';
+  const apiurl='http://54.152.208.161:8080/api/review/new';
 
   const [reviews, setReviews]=useState<Reviews[]>([])
   useEffect (()=>{
@@ -22,7 +22,7 @@ export function ProductReviews(props: productProps) {
   }, []);
 
   const loadReviews=async()=>{
-    const result =await axios.get("http://localhost:8080/api/review/name/"+id)
+    const result =await axios.get("http://54.152.208.161:8080/api/review/name/"+id)
     console.log(result.data);
     setReviews(result.data);
  };
@@ -39,7 +39,7 @@ export function ProductReviews(props: productProps) {
 
   var config = {
       method: 'post',
-      url: 'http://localhost:8080/auth/userprofile',   
+      url: 'http://54.152.208.161:8080/auth/userprofile',   
       withCredentials:true
     };
     

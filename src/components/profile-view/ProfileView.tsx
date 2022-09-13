@@ -19,7 +19,7 @@ export function ViewUser() {
 
         var config = {
             method: 'post',
-            url: 'http://localhost:8080/auth/userprofile',   
+            url: 'http://54.152.208.161:8080/auth/userprofile',   
             withCredentials:true
           };
           
