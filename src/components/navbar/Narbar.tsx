@@ -26,7 +26,7 @@ const Logo = styled.h1`
   font-weight: bold;
 `;
 
-const url='https://cdn.discordapp.com/attachments/1014202573328236664/1016779501922947205/unnamed.png';
+const url='https://p306272022.s3.amazonaws.com/logo.png';
 const LogoImage = styled.img`
   width:10;
   height:5;
