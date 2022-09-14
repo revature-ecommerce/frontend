@@ -2,7 +2,7 @@
 ---
 ## Information
 > These different installations will allow you to setup our project on your own machine.
-**NOTE**: We used VScode (Visual Studio Code) as our IDE for our Front-end portion of the project however, it is completely up to whichever IDE you prefer.
+> **NOTE**: We used VScode (Visual Studio Code) as our IDE for our Front-end portion of the project however, it is completely up to whichever IDE you prefer.
 ## Necessary Technology Installation
 
 ### **VScode**: 
